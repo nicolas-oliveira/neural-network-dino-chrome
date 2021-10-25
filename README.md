@@ -32,7 +32,7 @@ make install
 ## Como executar
 
 ```
-make run-dino
+make run
 ```
 
 Ao executar, o programa irá criar uma pasta chamada `redes` no qual guarda o progresso e as redes mais avançadas no game.
