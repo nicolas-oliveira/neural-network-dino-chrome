@@ -6,7 +6,7 @@ else
 	COMPILER=g++
 endif
 
-FLAGS := -I./lib/pig
+FLAGS := -I./lib/CPIG
 FLAGS += -I./modules
 FLAGS += `sdl2-config --cflags --libs`
 FLAGS += -lSDL2 -lSDL2_ttf -lSDL2_image -lpthread -lwebp
