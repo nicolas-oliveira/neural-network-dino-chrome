@@ -1,4 +1,3 @@
-
 #define LARG_GRAFICO            600
 #define CHAO_QUANTIDADE         30
 #define MONTANHA_QUANTIDADE     3
@@ -7,10 +6,7 @@
 #define QTD_SPRITE_CACTUS       6
 #define MAX_OBSTACULOS          7
 
-
-
-typedef struct dinossauro
-{
+typedef struct dinossauro {
     double X, Y;
     double VelocidadeY;
     int Frame;
@@ -33,8 +29,7 @@ typedef struct dinossauro
 
 }   Dinossauro;
 
-typedef struct obstaculo
-{
+typedef struct obstaculo {
     double X, Y;
     int Tipo;
     Sprite* sprite[2];
@@ -43,36 +38,26 @@ typedef struct obstaculo
 
 }   Obstaculo;
 
-typedef struct chao
-{
+typedef struct chao {
     double X, Y;
     Sprite sprite;
 
 }   Chao;
 
-typedef struct montanha
-{
+typedef struct montanha {
     double X[2], Y[2];
     Sprite sprite[2];
 
 }   Montanha;
 
-typedef struct nuvem
-{
+typedef struct nuvem {
     double X, Y;
     Sprite sprite;
 
 }   Nuvem;
 
-typedef struct grafico
-{
+typedef struct grafico {
     double MediaFitness[LARG_GRAFICO];
     double MelhorFitness[LARG_GRAFICO];
 
 }   Grafico;
-
-
-
-
-
-

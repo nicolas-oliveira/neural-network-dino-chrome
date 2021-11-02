@@ -1,5 +1,4 @@
-void GerarListaObstaculos()
-{
+void GerarListaObstaculos() {
     int contadorEspinhos = 0;
     int Largura;
 
@@ -7,18 +6,13 @@ void GerarListaObstaculos()
     obstaculosModelo[0].Y = 15;
     obstaculosModelo[0].Tipo = 5;
 
-    for(int i=1; i<20000; i++)
-    {
-        if(contadorEspinhos >= 10)
-        {
+    for(int i = 1; i < 20000; i++) {
+        if(contadorEspinhos >= 10) {
             obstaculosModelo[i].Tipo = ESPINHO_CODIGO_TIPO;
             contadorEspinhos = 0;
-        }
-        else
-        {
+        } else {
             obstaculosModelo[i].Tipo = rand()%6;
-            if(DINO_BRAIN_QTD_OUTPUT == 3)
-            {
+            if(DINO_BRAIN_QTD_OUTPUT == 3) {
                 contadorEspinhos++;
             }
 
@@ -33,40 +27,29 @@ void GerarListaObstaculos()
 
         /// ---------------
 
-        if(obstaculosModelo[i].Tipo == PASSARO_CODIGO_TIPO)
-        {
+        if(obstaculosModelo[i].Tipo == PASSARO_CODIGO_TIPO) {
             obstaculosModelo[i].Y = 20 + rand()%65;
-        }
-        else
-        {
-            if(obstaculosModelo[i].Tipo == ESPINHO_CODIGO_TIPO)
-            {
+        } else {
+            if(obstaculosModelo[i].Tipo == ESPINHO_CODIGO_TIPO) {
                 obstaculosModelo[i].Y = 10;
-            }
-            else
-            {
+            } else {
                 obstaculosModelo[i].Y = 15;
             }
         }
     }
 }
 
-void GerarListaObstaculosTreinoSemEspinho()
-{
+void GerarListaObstaculosTreinoSemEspinho() {
     int Largura;
 
     obstaculosModelo[0].X = 1250;
     obstaculosModelo[0].Y = 15;
     obstaculosModelo[0].Tipo = 0;
 
-    for(int i=1; i<POPULACAO_TAMANHO; i++)
-    {
-        if(i < 600)
-        {
+    for(int i = 1; i < POPULACAO_TAMANHO; i++) {
+        if(i < 600) {
             obstaculosModelo[i].Tipo = 5;
-        }
-        else
-        {
+        } else {
             obstaculosModelo[i].Tipo = (i-600)/300;
             if(obstaculosModelo[i].Tipo > 5)
             {
@@ -84,12 +67,9 @@ void GerarListaObstaculosTreinoSemEspinho()
 
         /// ---------------
 
-        if(obstaculosModelo[i].Tipo == PASSARO_CODIGO_TIPO)
-        {
+        if(obstaculosModelo[i].Tipo == PASSARO_CODIGO_TIPO) {
             obstaculosModelo[i].Y = 20 + i%65;
-        }
-        else
-        {
+        } else {
             obstaculosModelo[i].Y = 15;
         }
     }
@@ -99,19 +79,14 @@ void GerarListaObstaculosTreinoSemEspinho()
     fclose(f);
 
     f = fopen("obstaculos.txt","w");
-    for(int i=0; i<POPULACAO_TAMANHO; i++)
-    {
+    for(int i = 0; i < POPULACAO_TAMANHO; i++) {
         fprintf(f,"%d %f %f\n", obstaculosModelo[i].Tipo, obstaculosModelo[i].X, obstaculosModelo[i].Y);
     }
     fclose(f);
 }
 
-
-
-void CarregarListaObstaculos()
-{
+void CarregarListaObstaculos() {
     FILE* f = fopen("obstaculos.dat","rb");
     fread(obstaculosModelo, POPULACAO_TAMANHO, sizeof(Obstaculo), f);
     fclose(f);
 }
-

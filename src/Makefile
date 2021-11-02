@@ -7,6 +7,7 @@ else
 endif
 
 FLAGS := -I./lib/pig
+FLAGS += -I./modules
 FLAGS += `sdl2-config --cflags --libs`
 FLAGS += -lSDL2 -lSDL2_ttf -lSDL2_image -lpthread -lwebp
 
@@ -23,4 +24,7 @@ run:
 	./main.o
 
 clean:
-	rm -rf main.o gerador.o *.dSYM 
+	rm -rf main.o gerador.o *.dSYM
+
+debug:
+	clear && echo "Entrando no programa de Debug GDB...\nDigite:\n'r'     -> Para executar o programa\n'where' -> Para identificar a linha\n'list'  -> Para mostrar o trecho do código\n'q'     -> Para sair" && gdb -q ./main.o
