@@ -2,10 +2,6 @@
 
 ![](.github/dino.png)
 
-## Disclaimer
-
-Este é apenas um fork com as libs necessárias para rodar o código criado pelo João Victor.
-
 ## Dependências
 
 - sdl2
@@ -53,6 +49,12 @@ Ao executar, o programa irá criar uma pasta chamada `redes` no qual guarda o pr
 - O resto dos arquivos são apenas os códigos da implementação do jogo.
 
 Um grande abraço!
+
+## Sobre os direitos deste repositório
+
+Este repositório tem o objetivo de aprender por engenharia reversa usando o código original do João Vitor (Canal Youtube: Universo Programado) e não há nenhuma violação dos direitos do código original obtido neste site, todos os direitos são reservados, portanto, ao criador original.
+
+Qualquer coisa fale comigo: nicolas.oliveira.ug@gmail.com
 
 ## Créditos
 
